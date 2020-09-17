@@ -96,7 +96,8 @@ print()
 
 
 def enterLong(price):
-    curr_usd = client.get_balance('USD')
+#     curr_usd = client.get_balance('USD')
+    curr_usd = max(client.get_balance('USD'), 500.0)
     usd_per_btc = client.get_price(curr_symbol)
     btc = curr_usd / usd_per_btc
     newprice = price + 1
