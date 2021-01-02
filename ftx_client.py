@@ -68,6 +68,9 @@ class FtxClient:
 #         print(market, resolution)
         return self._get(f'markets/{market}/candles?resolution={resolution}')
 
+    def get_historical_candles(self, market, resolution, start_time, end_time):
+        return self._get(f'markets/{market}/candles?resolution={resolution}&start_time={start_time}&end_time={end_time}')
+
     def get_orderbook(self, market, depth = None):
         return self._get(f'markets/{market}/orderbook', {'depth': depth})
 
